@@ -191,3 +191,68 @@ def zero_sum(arg):
 
 zero_sum([2,4,5,-2,-4,9])
 """
+
+
+#Letter Counter
+"""
+def letter_counter(arg):
+    upper_list = []
+    lower_list = []
+
+    for letter in arg:
+        if letter.isupper():
+            upper_list.append(letter)
+        elif letter.islower():
+            lower_list.append(letter)
+
+    print("Upper case letters", len(upper_list))
+    print("Lower case letters", len(lower_list))
+letter_counter("Hello World")
+"""
+
+
+#Bank Account
+"""
+def net_amount(arg):
+    total = 0
+
+    for el in arg:
+        if el[0] == "D":
+            total += float(el[2:])
+        elif el[0] == "W":
+            total -= float(el[2:])
+    print(total)
+
+net_amount(["D 300", "D 300", "W 200", "D 100", "D 400"])
+"""
+
+
+#Insane dict
+"""
+import random
+def insane_dict(arg):
+    count = 0
+    my_dictionary = {}
+    if 9 < arg < 1001:
+        while count <= arg:
+            count += 1
+            random_number = random.randint(1, 1000)
+            my_dictionary[random_number] = random_number * random_number
+        print(my_dictionary)
+    else:
+        print("Please type a number between 10 and 1000")
+
+
+insane_dict(15)
+"""
+
+
+#Number to text
+import inflect
+def number_word(arg):
+    p = inflect.engine()
+    print(p.number_to_words(arg))
+
+number_word(79)
+
+
